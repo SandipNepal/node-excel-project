@@ -9,7 +9,6 @@ const Student = sequelize.define(
       allowNull: false,
       unique: true,
       primaryKey: true,
-      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -22,17 +21,20 @@ const Student = sequelize.define(
     contact: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      unique: true,
     },
     marks: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    total: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   {
     modelName: "Student",
-    timestamps: true,
-    paranoid: true,
+    timestamps: false,
+    paranoid: false,
     tableName: "Student",
   }
 );
