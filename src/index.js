@@ -18,6 +18,7 @@ const workSheet = file.Sheets["Sheet1"];
 const excel_data = xlsx.utils.sheet_to_json(workSheet);
 
 const sheets = file.SheetNames;
+
 for (let i = 0; i < sheets.length; i++) {
   excel_data.forEach(async (content) => {
     // console.log(content);
@@ -83,6 +84,7 @@ for (let i = 0; i < sheets.length; i++) {
     }
   });
 }
+
 DB();
 app.listen(PORT || 5000, () => {
   console.log("Server established 🚀🚀🚀");
